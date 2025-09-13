@@ -1,84 +1,106 @@
 {% extends 'workshop_app/base.html' %}
+{% load custom_filters %}
 
 {% block title %}
-    View Workshop details
+    Workshop Details
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <table class="table table-bordered">
-            <tr>
-                <th><label for="id_first_name">Workshop Type :</label></th>
-                <td><label for="id_first_name"><a
-                        href="{% url 'workshop_app:workshop_type_details' workshop.workshop_type_id %}">{{ workshop.workshop_type }}</a></label>
-                </td>
-            </tr>
-            <tr>
-                <th><label for="id_last_name">Date :</label></th>
-                <td><label for="id_last_name">{{ workshop.date }}</label></td>
-            </tr>
-            <tr>
-                <th><label for="id_email">Coordinator :</label></th>
-                <td><label for="id_email">{{ workshop.coordinator.get_full_name|title }}</label>
-                </td>
-            </tr>
-            {% if workshop.status %}
-                <tr>
-                    <th><label for="id_institute">Status :</label></th>
-                    <td><span class="badge badge-success">{{ workshop.get_status }}</span></td>
-                </tr>
-                <tr>
-                    <th><label for="id_phone_number">Instructor :</label></th>
-                    <td><label for="id_email">{{ workshop.instructor.get_full_name|title }}</label>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <th><label for="id_institute">Status :</label></th>
-                    <td><span class="badge badge-warning">{{ workshop.get_status }}</span></td>
-                </tr>
-            {% endif %}
-        </table>
-        <br>
-        <div class="container">
-            <div class="card mt-2 mb-5">
-                <form method="post">
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="mx-3 font-weight-bold">Post a comment</div>
-                            {% if request.user.profile.position == 'instructor' %}
-                                <div class="ml-5">{{ form.public }} Public</div>
-                                <div class="ml-1 text-muted">(Non-public comments are visible only to instructors)</div>
-                            {% endif %}
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        {{ form.comment }}
-                    </div>
-                    <button type="submit" class="float-right btn btn-primary btn-md m-2">Post</button>
-                </form>
-            </div>
-            <br><br>
-            <h2 class="text-center">Comments</h2>
-            <br>
-            {% for comment in workshop_comments %}
-                <div class="card my-2">
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="ml-3 font-weight-bold"><a
-                                    href="{% url 'workshop_app:view_profile' comment.author_id %}">{{ comment.author }}</a></div>
-                            {% if not comment.public %}
-                                <div class="ml-1"><span class="badge badge-dark">Hidden</span></div>
-                            {% endif %}
-                            <div class="ml-3 text-muted">{{ comment.created_date }}</div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <p>{{ comment.comment }}</p>
-                    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">{{ workshop.workshop_type|capfirst }} - Details</h3>
                 </div>
-            {% endfor %}
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <dl class="row">
+                                <dt class="col-sm-5">Institute:</dt>
+                                <dd class="col-sm-7">{{ workshop.institute_name }}</dd>
+
+                                <dt class="col-sm-5">Address:</dt>
+                                <dd class="col-sm-7">{{ workshop.address }}</dd>
+
+                                <dt class="col-sm-5">Participants:</dt>
+                                <dd class="col-sm-7">{{ workshop.no_of_participants }}</dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-6">
+                            <dl class="row">
+                                <dt class="col-sm-5">Status:</dt>
+                                <dd class="col-sm-7">
+                                    {% if workshop.status %}
+                                        <span class="badge bg-success">{{ workshop.get_status }}</span>
+                                    {% else %}
+                                        <span class="badge bg-warning text-dark">{{ workshop.get_status }}</span>
+                                    {% endif %}
+                                </dd>
+
+                                <dt class="col-sm-5">Date:</dt>
+                                <dd class="col-sm-7">{{ workshop.date|date:"F d, Y" }}</dd>
+
+                                {% if workshop.instructor %}
+                                    <dt class="col-sm-5">Instructor:</dt>
+                                    <dd class="col-sm-7">{{ workshop.instructor.get_full_name }}</dd>
+                                {% endif %}
+                            </dl>
+                        </div>
+                    </div>
+
+                    {% if workshop.attachment_file_set.all %}
+                        <hr>
+                        <h5>Attachments:</h5>
+                        <ul class="list-group">
+                            {% for file in workshop.attachment_file_set.all %}
+                                <li class="list-group-item">
+                                    <a href="{{ file.attachment.url }}" target="_blank">{{ file.get_file_name }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+                <div class="card-footer bg-light text-end">
+                    {% if request.user|has_group:"instructor" and not workshop.status %}
+                        <a href="{% url 'workshop_app:accept_workshop' workshop.id %}" class="btn btn-success">Accept Workshop</a>
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#dateChangeModal">
+                            Propose New Date
+                        </button>
+                    {% endif %}
+                    <a href="{{ request.META.HTTP_REFERER|escape }}" class="btn btn-secondary">Go Back</a>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
+{% if request.user|has_group:"instructor" and not workshop.status %}
+<div class="modal fade" id="dateChangeModal" tabindex="-1" role="dialog" aria-labelledby="dateChangeModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="dateChangeModalLabel">Propose a New Date</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" action="{% url 'workshop_app:change_workshop_date' workshop.id %}">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="id_date">New Proposed Date:</label>
+                        <input type="date" class="form-control" name="date" required id="id_date">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endif %}
 {% endblock %}
