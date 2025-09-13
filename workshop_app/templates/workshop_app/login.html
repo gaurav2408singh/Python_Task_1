@@ -1,53 +1,51 @@
 {% extends 'workshop_app/base.html' %}
 
-{% block title %}
-    Login
-{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6 col-md-offset-6">
-                <div class="card">
-                    <div class="card-body">
-                        <form class="px-3 py-3" method="post">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Secure Login</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
                         {% csrf_token %}
+
                         {% if form.errors %}
-                            {% for field in form %}
-                                {% for error in field.errors %}
-                                    <div class="alert alert-dismissible alert-danger">
-                                        <button type="button" class="close" data-dismiss="alert">
-                                            <i class="fa fa-close"></i>
-                                        </button>
-                                        <strong>{{ error|escape }}</strong>
-                                    </div>
-                                {% endfor %}
-                            {% endfor %}
-                            {% for error in form.non_field_errors %}
-                                <div class="alert alert-dismissible alert-danger">
-                                    <button type="button" class="close" data-dismiss="alert">
-                                        <i class="fa fa-close"></i>
-                                    </button>
-                                    <strong>{{ error|escape }}</strong>
-                                </div>
-                            {% endfor %}
+                            <div class="alert alert-danger">
+                                Your username and password didn't match. Please try again.
+                            </div>
                         {% endif %}
-                        <div class="form-group">
-                          <label for="id_username">Username</label>
-                          {{ form.username }}
+                        
+                        <div class="form-group mb-3">
+                            <label for="{{ form.username.id_for_label }}">Username</label>
+                            <input type="text" name="{{ form.username.name }}" class="form-control" required id="{{ form.username.id_for_label }}">
                         </div>
-                        <div class="form-group">
-                          <label for="id_password">Password</label>
-                          {{ form.password }}
+
+                        <div class="form-group mb-4">
+                            <label for="{{ form.password.id_for_label }}">Password</label>
+                            <input type="password" name="{{ form.password.name }}" class="form-control" required id="{{ form.password.id_for_label }}">
                         </div>
-                        <button type="submit" class="btn btn-primary">Sign in</button>
-                        </form>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'workshop_app:register' %}">New around here? Sign up</a>
-                        <a class="dropdown-item" href="{% url 'password_reset' %}">Forgot password?</a>
-                    </div>
-                </div>  
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="text-center">
+                            <a href="{% url 'workshop_app:register' %}">New around here? Sign up</a>
+                            <br>
+                            <a href="{% url 'password_reset' %}">Forgot password?</a>
+                        </div>
+                    </form>
+                </div>
             </div>
+
         </div>
     </div>
-{% endblock %}
+</div> {% endblock %}
