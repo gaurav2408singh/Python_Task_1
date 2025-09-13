@@ -1,39 +1,105 @@
-/* workshop_app/static/workshop_app/css/custom.css */
+:root {
+    --primary-color: #1173d4;
+    --primary-hover: #0d5aa5;
+    --body-bg: #f8f9fa;
+    --heading-font: 'Manrope', 'Roboto', sans-serif;
+    --body-font: 'Roboto', sans-serif;
+}
+
+/* FIX: Force vertical scrolling and hide horizontal overflow */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
 
 body {
-    background-color: #f8f9fa; /* Fallback color */
-    background-image: linear-gradient(180deg, #ffffff 0%, #e9ecef 100%);
-    background-size: cover;
-    background-attachment: fixed;
-    font-family: 'Roboto', sans-serif; /* Apply new font */
+    background-color: var(--body-bg);
+    font-family: var(--body-font);
+    color: #333;
+    padding-bottom: 100px; /* ADD THIS LINE to push content up from the footer */
 }
 
-/* Make jumbotron background transparent to show body gradient */
-.jumbotron {
-    background-color: transparent !important;
+h1, h2, h3, h4, h5 {
+    font-family: var(--heading-font);
+    font-weight: 700;
 }
 
-/* Card header styling with a more appealing gradient */
-.card-header {
-    background-image: linear-gradient(to right, #007bff 0%, #0056b3 100%); /* Blue gradient for card headers */
-    color: white;
-    font-weight: 700; /* Make headers bold */
+/* NAVBAR STYLING */
+.navbar.bg-dark {
+    background-color: var(--primary-color) !important;
+    background-image: linear-gradient(to right, var(--primary-color) 0%, var(--primary-hover) 100%);
 }
-
-/* Hover effect for cards */
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+.navbar .nav-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
     transition: all 0.3s ease;
 }
-
-/* Custom styling for status badges for better contrast */
-.badge-success {
-    background-color: #28a745 !important; /* Green */
-    color: white;
+.navbar .nav-link:hover {
+    color: #ffffff !important;
+    transform: translateX(5px);
 }
 
-.badge-warning {
-    background-color: #ffc107 !important; /* Yellow */
-    color: #343a40; /* Dark text for yellow badge */
+/* CARD STYLING */
+.card {
+    border: none;
+    border-radius: 0.5rem;
+}
+.card-header {
+    background-color: var(--primary-color) !important;
+    background-image: linear-gradient(to right, var(--primary-color) 0%, var(--primary-hover) 100%);
+    color: white;
+    font-weight: 700;
+    border-bottom: none;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+    transition: all 0.3s ease;
+}
+/* FIX: New styles for card content alignment and font */
+.card-body {
+    gap: 0.75rem; /* Adds space between the items */
+}
+.card-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.75rem;
+}
+.item-label {
+    font-weight: 500;
+    color: #555;
+    margin-right: 1rem;
+}
+.item-value {
+    text-align: right;
+}
+
+/* BUTTONS */
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    font-weight: 600;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.3rem;
+}
+.btn-primary:hover {
+    background-color: var(--primary-hover) !important;
+    border-color: var(--primary-hover) !important;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #343a40;
+    color: #adb5bd;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.badge-danger {
+    background-color: #dc3545 !important; /* Red */
+    color: white;
 }
