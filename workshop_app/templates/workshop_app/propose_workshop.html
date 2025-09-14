@@ -8,68 +8,96 @@
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
 
-            <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">
-                    <h3 class="mb-0">Propose a New Workshop</h3>
-                </div>
-                <div class="card-body">
+            <div class="text-center mb-5">
+                <h1 class="h2">Propose a New Workshop</h1>
+                <p style="color: var(--medium-text);">Fill out the details below to submit your proposal.</p>
+            </div>
+
+            <div class="card shadow">
+                <div class="card-body p-4">
                     <form method="post" enctype="multipart/form-data">
                         {% csrf_token %}
 
                         {% if form.errors %}
-                            <div class="alert alert-danger">
-                                Please correct the errors below.
-                            </div>
+                        <div class="alert alert-danger">
+                            Please correct the errors below.
+                        </div>
                         {% endif %}
 
-                        <div class="mb-3">
-                            <label for="{{ form.workshop_type.id_for_label }}" class="form-label">Workshop Type</label>
-                            {{ form.workshop_type|add_class:"form-control" }}
-                            {% if form.workshop_type.errors %}<div class="text-danger small mt-1">{{ form.workshop_type.errors|striptags }}</div>{% endif %}
+                        <div class="form-group mb-4">
+                            <label for="{{ form.workshop_type.id_for_label }}" class="font-weight-medium mb-1">Workshop
+                                Type</label>
+                            <select name="{{ form.workshop_type.name }}" id="{{ form.workshop_type.id_for_label }}"
+                                class="form-control form-control-lg">
+                                {% for value, text in form.workshop_type.field.choices %}
+                                <option value="{{ value }}">{{ text }}</option>
+                                {% endfor %}
+                            </select>
+                            {% if form.workshop_type.errors %}<div class="text-danger small mt-1">{{
+                                form.workshop_type.errors|striptags }}</div>{% endif %}
                         </div>
 
-                        <div class="mb-3">
-                            <label for="{{ form.institute_name.id_for_label }}" class="form-label">Institute Name</label>
-                            {{ form.institute_name|add_class:"form-control" }}
-                             {% if form.institute_name.errors %}<div class="text-danger small mt-1">{{ form.institute_name.errors|striptags }}</div>{% endif %}
+                        <div class="form-group mb-4">
+                            <label for="{{ form.institute_name.id_for_label }}"
+                                class="font-weight-medium mb-1">Institute Name</label>
+                            <input type="text" name="{{ form.institute_name.name }}"
+                                class="form-control form-control-lg" required
+                                id="{{ form.institute_name.id_for_label }}">
+                            {% if form.institute_name.errors %}<div class="text-danger small mt-1">{{
+                                form.institute_name.errors|striptags }}</div>{% endif %}
                         </div>
 
-                        <div class="mb-3">
-                            <label for="{{ form.address.id_for_label }}" class="form-label">Address</label>
-                            {{ form.address|add_class:"form-control" }}
-                            {% if form.address.errors %}<div class="text-danger small mt-1">{{ form.address.errors|striptags }}</div>{% endif %}
+                        <div class="form-group mb-4">
+                            <label for="{{ form.address.id_for_label }}" class="font-weight-medium mb-1">Address</label>
+                            <textarea name="{{ form.address.name }}" class="form-control form-control-lg" required
+                                id="{{ form.address.id_for_label }}" rows="3"></textarea>
+                            {% if form.address.errors %}<div class="text-danger small mt-1">{{
+                                form.address.errors|striptags }}</div>{% endif %}
                         </div>
 
-                        <div class="mb-3">
-                            <label for="{{ form.no_of_participants.id_for_label }}" class="form-label">Number of Participants</label>
-                            {{ form.no_of_participants|add_class:"form-control" }}
-                            {% if form.no_of_participants.errors %}<div class="text-danger small mt-1">{{ form.no_of_participants.errors|striptags }}</div>{% endif %}
+                        <div class="row">
+                            <div class="col-md-6 form-group mb-4">
+                                <label for="{{ form.no_of_participants.id_for_label }}"
+                                    class="font-weight-medium mb-1">Number of Participants</label>
+                                <input type="number" name="{{ form.no_of_participants.name }}"
+                                    class="form-control form-control-lg" required
+                                    id="{{ form.no_of_participants.id_for_label }}">
+                                {% if form.no_of_participants.errors %}<div class="text-danger small mt-1">{{
+                                    form.no_of_participants.errors|striptags }}</div>{% endif %}
+                            </div>
+
+                            <div class="col-md-6 form-group mb-4">
+                                <label for="{{ form.proposed_date.id_for_label }}"
+                                    class="font-weight-medium mb-1">Proposed Date</label>
+                                <input type="date" name="{{ form.proposed_date.name }}"
+                                    class="form-control form-control-lg" required
+                                    id="{{ form.proposed_date.id_for_label }}">
+                                {% if form.proposed_date.errors %}<div class="text-danger small mt-1">{{
+                                    form.proposed_date.errors|striptags }}</div>{% endif %}
+                            </div>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="{{ form.proposed_date.id_for_label }}" class="form-label">Proposed Date</label>
-                            {{ form.proposed_date|add_class:"form-control" }}
-                             {% if form.proposed_date.errors %}<div class="text-danger small mt-1">{{ form.proposed_date.errors|striptags }}</div>{% endif %}
+                        <div class="form-group mb-4">
+                            <label for="{{ form.attachment.id_for_label }}" class="font-weight-medium mb-1">Attachment
+                                (Optional)</label>
+                            <input type="file" name="{{ form.attachment.name }}" class="form-control form-control-lg"
+                                id="{{ form.attachment.id_for_label }}">
+                            {% if form.attachment.errors %}<div class="text-danger small mt-1">{{
+                                form.attachment.errors|striptags }}</div>{% endif %}
                         </div>
 
-                        <div class="mb-3">
-                            <label for="{{ form.attachment.id_for_label }}" class="form-label">Attachment (Optional)</label>
-                            {{ form.attachment|add_class:"form-control" }}
-                            {% if form.attachment.errors %}<div class="text-danger small mt-1">{{ form.attachment.errors|striptags }}</div>{% endif %}
-                        </div>
-
-                        <hr>
-                        
-                        <div class="form-check mb-3">
-                            {{ form.tnc_accepted|add_class:"form-check-input" }}
+                        <div class="form-check mb-4">
+                            <input type="checkbox" name="{{ form.tnc_accepted.name }}" class="form-check-input" required
+                                id="{{ form.tnc_accepted.id_for_label }}">
                             <label class="form-check-label" for="{{ form.tnc_accepted.id_for_label }}">
                                 I accept the Terms and Conditions.
                             </label>
-                            {% if form.tnc_accepted.errors %}<div class="text-danger small mt-1">{{ form.tnc_accepted.errors|striptags }}</div>{% endif %}
+                            {% if form.tnc_accepted.errors %}<div class="text-danger small mt-1">{{
+                                form.tnc_accepted.errors|striptags }}</div>{% endif %}
                         </div>
 
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-primary btn-lg">Submit Proposal</button>
+                            <button type="submit" class="btn btn-primary btn-lg py-2">Submit Proposal</button>
                         </div>
 
                     </form>

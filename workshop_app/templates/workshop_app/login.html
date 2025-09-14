@@ -1,4 +1,5 @@
 {% extends 'workshop_app/base.html' %}
+{% load custom_filters %}
 
 {% block title %}Login{% endblock %}
 
@@ -7,11 +8,13 @@
     <div class="row">
         <div class="col-lg-6 col-md-8 mx-auto">
             
-            <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">
-                    <h3 class="mb-0">Secure Login</h3>
-                </div>
-                <div class="card-body">
+            <div class="text-center mb-5">
+                <h1 class="h2">Secure Login</h1>
+                <p class="text-secondary">Access your Workshop Booker account</p>
+            </div>
+
+            <div class="card shadow">
+                <div class="card-body p-4">
                     <form method="post">
                         {% csrf_token %}
 
@@ -20,32 +23,34 @@
                                 Your username and password didn't match. Please try again.
                             </div>
                         {% endif %}
-                        
-                        <div class="form-group mb-3">
-                            <label for="{{ form.username.id_for_label }}">Username</label>
-                            <input type="text" name="{{ form.username.name }}" class="form-control" required id="{{ form.username.id_for_label }}">
-                        </div>
 
                         <div class="form-group mb-4">
-                            <label for="{{ form.password.id_for_label }}">Password</label>
-                            <input type="password" name="{{ form.password.name }}" class="form-control" required id="{{ form.password.id_for_label }}">
+                            <label for="{{ form.username.id_for_label }}" class="font-weight-medium mb-1">Username</label>
+                            <input type="text" name="{{ form.username.name }}" class="form-control form-control-lg" required id="{{ form.username.id_for_label }}">
                         </div>
 
+                        <div class="form-group mb-3">
+                            <label for="{{ form.password.id_for_label }}" class="font-weight-medium mb-1">Password</label>
+                            <input type="password" name="{{ form.password.name }}" class="form-control form-control-lg" required id="{{ form.password.id_for_label }}">
+                        </div>
+
+                        <div class="d-flex justify-content-end mb-4">
+                            <a href="{% url 'password_reset' %}" class="small">Forgot your password?</a>
+                        </div>
+                        
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
-                        </div>
-
-                        <hr class="my-4">
-
-                        <div class="text-center">
-                            <a href="{% url 'workshop_app:register' %}">New around here? Sign up</a>
-                            <br>
-                            <a href="{% url 'password_reset' %}">Forgot password?</a>
+                            <button type="submit" class="btn btn-primary btn-lg py-2">Log In</button>
                         </div>
                     </form>
                 </div>
             </div>
 
+            <p class="text-center small mt-4">
+                Don't have an account? 
+                <a href="{% url 'workshop_app:register' %}">Sign up</a>
+            </p>
+
         </div>
     </div>
-</div> {% endblock %}
+</div>
+{% endblock %}

@@ -1,105 +1,155 @@
-:root {
-    --primary-color: #1173d4;
-    --primary-hover: #0d5aa5;
-    --body-bg: #f8f9fa;
-    --heading-font: 'Manrope', 'Roboto', sans-serif;
-    --body-font: 'Roboto', sans-serif;
-}
+/* =================================================================
+   DARK MODE UI - FOSSEE WORKSHOP BOOKER
+   ================================================================= */
 
-/* FIX: Force vertical scrolling and hide horizontal overflow */
-html, body {
-    overflow-x: hidden;
-    width: 100%;
+/* 1. DEFINE THE NEW DARK PALETTE & GLOBAL STYLES
+   -------------------------------------------------------------- */
+/* 1. DEFINE THE NEW DARK PALETTE & GLOBAL STYLES
+   -------------------------------------------------------------- */
+:root {
+    --primary-accent: #10b981; /* A VIBRANT GREEN for accents */
+    --primary-hover: #059669;  /* A darker green for hover */
+    --dark-bg: #111827;        /* A deep, dark blue-gray background */
+    --dark-card: #1f2937;      /* A lighter gray for cards and navbars */
+    --light-text: #e5e7eb;     /* Primary text color */
+    --medium-text: #9ca3af;    /* Secondary text color */
+    --border-color: #374151;   /* Border color for components */
+    --font-choice: 'Poppins', 'Roboto', sans-serif;
 }
 
 body {
-    background-color: var(--body-bg);
-    font-family: var(--body-font);
-    color: #333;
-    padding-bottom: 100px; /* ADD THIS LINE to push content up from the footer */
+    background-color: var(--dark-bg);
+    font-family: var(--font-choice);
+    color: var(--light-text);
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: var(--heading-font);
+    color: #ffffff;
     font-weight: 700;
 }
 
-/* NAVBAR STYLING */
-.navbar.bg-dark {
-    background-color: var(--primary-color) !important;
-    background-image: linear-gradient(to right, var(--primary-color) 0%, var(--primary-hover) 100%);
+/* =================================================================
+   2. DARK MODE COMPONENT STYLING
+   -------------------------------------------------------------- */
+
+/* NAVBAR */
+.navbar {
+    background-color: var(--dark-card) !important;
+    border-bottom: 1px solid var(--border-color) !important;
 }
-.navbar .nav-link {
-    font-size: 1.1rem;
-    font-weight: 500;
-    padding: 0.5rem 1rem !important;
-    transition: all 0.3s ease;
-}
-.navbar .nav-link:hover {
-    color: #ffffff !important;
-    transform: translateX(5px);
+.navbar-brand h2, .navbar .nav-link, .navbar .text-secondary {
+    color: var(--light-text) !important;
 }
 
-/* CARD STYLING */
+/* CARDS */
 .card {
-    border: none;
+    background-color: var(--dark-card);
+    border: 1px solid var(--border-color);
     border-radius: 0.5rem;
 }
 .card-header {
-    background-color: var(--primary-color) !important;
-    background-image: linear-gradient(to right, var(--primary-color) 0%, var(--primary-hover) 100%);
+    background-color: rgba(255, 255, 255, 0.05) !important;
     color: white;
-    font-weight: 700;
-    border-bottom: none;
+    border-bottom: 1px solid var(--border-color) !important;
 }
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
-    transition: all 0.3s ease;
+.card-footer {
+    background-color: transparent !important;
+    border-top: 1px solid var(--border-color) !important;
 }
-/* FIX: New styles for card content alignment and font */
-.card-body {
-    gap: 0.75rem; /* Adds space between the items */
+
+/* FORMS */
+.form-control {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    border: 1px solid var(--border-color);
 }
-.card-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 0.75rem;
-}
-.item-label {
-    font-weight: 500;
-    color: #555;
-    margin-right: 1rem;
-}
-.item-value {
-    text-align: right;
+.form-control:focus {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 0 0.2rem rgba(0, 168, 232, 0.25);
 }
 
 /* BUTTONS */
 .btn-primary {
-    background-color: var(--primary-color) !important;
-    border-color: var(--primary-color) !important;
+    background-color: var(--primary-accent) !important;
+    border-color: var(--primary-accent) !important;
+    color: #ffffff !important;
     font-weight: 600;
-    padding: 0.75rem 1.25rem;
-    border-radius: 0.3rem;
 }
 .btn-primary:hover {
     background-color: var(--primary-hover) !important;
     border-color: var(--primary-hover) !important;
 }
 
-/* FOOTER */
-.footer {
-    background-color: #343a40;
-    color: #adb5bd;
-    padding: 1.5rem 0;
-    text-align: center;
-    font-size: 0.9rem;
+/* LINKS */
+a, .link-primary {
+    color: var(--primary-accent);
+}
+a:hover, .link-primary:hover {
+    color: var(--primary-hover);
 }
 
-.badge-danger {
-    background-color: #dc3545 !important; /* Red */
+/* FOOTER */
+.footer {
+    background-color: var(--dark-card);
+    color: var(--medium-text);
+    border-top: 1px solid var(--border-color);
+}
+
+/* BADGES */
+.badge-status {
+    padding: 0.4em 0.7em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 0.25rem;
+}
+.badge-status-accepted {
+    background-color: var(--primary-accent);
     color: white;
+}
+.badge-status-pending {
+    background-color: #f59e0b; /* Amber */
+    color: #1f2937;
+}
+.badge-status-rejected {
+    background-color: #ef4444; /* Red */
+    color: white;
+}
+
+/* STATISTICS PAGE & TABLE FIXES */
+.stats-container {
+    display: flex;
+    gap: 2rem;
+}
+.filters-sidebar {
+    flex: 0 0 280px; /* Fixed width for the sidebar */
+}
+.main-content {
+    flex: 1;
+}
+
+/* Dark Mode Table Styling */
+.table {
+    color: var(--light-text);
+}
+.table-dark {
+    background-color: var(--dark-card);
+}
+.table thead th {
+    border-bottom: 2px solid var(--border-color);
+    color: #ffffff;
+}
+.table tbody tr {
+    border-color: var(--border-color);
+}
+.table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Fix for other button colors */
+.btn-info {
+    background-color: #0ea5e9 !important;
+    border-color: #0ea5e9 !important;
+    color: white !important;
 }

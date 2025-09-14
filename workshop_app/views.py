@@ -269,8 +269,8 @@ def propose_workshop(request):
     """Coordinator proposed a workshop and date"""
 
     user = request.user
-    if user.is_superuser:
-        return redirect("/admin")
+    # if user.is_superuser:
+    #     return redirect("/admin")
     if is_instructor(user):
         return redirect(get_landing_page(user))
     else:

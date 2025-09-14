@@ -1,18 +1,20 @@
 {% extends 'workshop_app/base.html' %}
+{% load custom_filters %}
 
 {% block title %}Register{% endblock %}
 
 {% block content %}
-<!-- ADD THIS CONTAINER DIV TO WRAP THE CONTENT -->
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
             
-            <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">
-                    <h3 class="mb-0">Create an Account</h3>
-                </div>
-                <div class="card-body">
+            <div class="text-center mb-5">
+                <h1 class="h2">Create an Account</h1>
+                <p style="color: var(--medium-text);">Join the Workshop Booker platform</p>
+            </div>
+
+            <div class="card shadow">
+                <div class="card-body p-4">
                     <form method="post">
                         {% csrf_token %}
 
@@ -25,55 +27,55 @@
                         {% endif %}
 
                         <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="{{ form.first_name.id_for_label }}" class="form-label">First Name</label>
-                                <input type="text" name="{{ form.first_name.name }}" class="form-control" required id="{{ form.first_name.id_for_label }}">
+                            <div class="col-md-6 form-group mb-4">
+                                <label for="{{ form.first_name.id_for_label }}" class="font-weight-medium mb-1">First Name</label>
+                                <input type="text" name="{{ form.first_name.name }}" class="form-control form-control-lg" required id="{{ form.first_name.id_for_label }}">
                             </div>
 
-                            <div class="col-md-6 mb-3">
-                                <label for="{{ form.last_name.id_for_label }}" class="form-label">Last Name</label>
-                                <input type="text" name="{{ form.last_name.name }}" class="form-control" required id="{{ form.last_name.id_for_label }}">
+                            <div class="col-md-6 form-group mb-4">
+                                <label for="{{ form.last_name.id_for_label }}" class="font-weight-medium mb-1">Last Name</label>
+                                <input type="text" name="{{ form.last_name.name }}" class="form-control form-control-lg" required id="{{ form.last_name.id_for_label }}">
                             </div>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="{{ form.username.id_for_label }}" class="form-label">Username</label>
-                            <input type="text" name="{{ form.username.name }}" class="form-control" required id="{{ form.username.id_for_label }}">
+                        <div class="form-group mb-4">
+                            <label for="{{ form.username.id_for_label }}" class="font-weight-medium mb-1">Username</label>
+                            <input type="text" name="{{ form.username.name }}" class="form-control form-control-lg" required id="{{ form.username.id_for_label }}">
                             {% if form.username.errors %}<div class="text-danger small mt-1">{{ form.username.errors|striptags }}</div>{% endif %}
                         </div>
 
-                        <div class="mb-3">
-                            <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
-                            <input type="email" name="{{ form.email.name }}" class="form-control" required id="{{ form.email.id_for_label }}">
+                        <div class="form-group mb-4">
+                            <label for="{{ form.email.id_for_label }}" class="font-weight-medium mb-1">Email</label>
+                            <input type="email" name="{{ form.email.name }}" class="form-control form-control-lg" required id="{{ form.email.id_for_label }}">
                             {% if form.email.errors %}<div class="text-danger small mt-1">{{ form.email.errors|striptags }}</div>{% endif %}
                         </div>
                         
-                        <hr>
+                        <div class="row">
+                            <div class="col-md-6 form-group mb-4">
+                                <label for="{{ form.password.id_for_label }}" class="font-weight-medium mb-1">Password</label>
+                                <input type="password" name="{{ form.password.name }}" class="form-control form-control-lg" required id="{{ form.password.id_for_label }}">
+                                <small style="color: var(--medium-text);">At least 8 characters.</small>
+                            </div>
 
-                        <div class="mb-3">
-                            <label for="{{ form.password.id_for_label }}" class="form-label">Password</label>
-                            <input type="password" name="{{ form.password.name }}" class="form-control" required id="{{ form.password.id_for_label }}">
-                            <div class="form-text">Your password must contain at least 8 characters.</div>
+                            <div class="col-md-6 form-group mb-4">
+                                <label for="{{ form.password2.id_for_label }}" class="font-weight-medium mb-1">Confirm Password</label>
+                                <input type="password" name="{{ form.password2.name }}" class="form-control form-control-lg" required id="{{ form.password2.id_for_label }}">
+                            </div>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="{{ form.password2.id_for_label }}" class="form-label">Confirm Password</label>
-                            <input type="password" name="{{ form.password2.name }}" class="form-control" required id="{{ form.password2.id_for_label }}">
-                        </div>
-
-                        <hr>
-
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                        <div class="d-grid mt-3">
+                            <button type="submit" class="btn btn-primary btn-lg py-2">Create Account</button>
                         </div>
                     </form>
                 </div>
-                <div class="card-footer text-center">
-                    <a href="{% url 'workshop_app:login' %}">Already have an account? Login here.</a>
-                </div>
             </div>
+
+            <p class="text-center small mt-4">
+                Already have an account? 
+                <a href="{% url 'workshop_app:login' %}">Log in</a>
+            </p>
 
         </div>
     </div>
-</div> <!-- DON'T FORGET THIS CLOSING DIV -->
+</div>
 {% endblock %}

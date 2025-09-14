@@ -9,40 +9,45 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-10 mx-auto">
-            <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">
-                    <h3 class="mb-0">{{ workshop.workshop_type|capfirst }} - Details</h3>
-                </div>
-                <div class="card-body">
+
+            <div class="text-center mb-5">
+                <h1 class="h2">{{ workshop.workshop_type|capfirst }}</h1>
+                <p style="color: var(--medium-text);">Details for the workshop at {{ workshop.institute_name }}</p>
+            </div>
+
+            <div class="card shadow">
+                <div class="card-body p-4">
                     <div class="row">
                         <div class="col-md-6">
                             <dl class="row">
-                                <dt class="col-sm-5">Institute:</dt>
+                                <dt class="col-sm-5 text-muted">Institute:</dt>
                                 <dd class="col-sm-7">{{ workshop.institute_name }}</dd>
 
-                                <dt class="col-sm-5">Address:</dt>
+                                <dt class="col-sm-5 text-muted">Address:</dt>
                                 <dd class="col-sm-7">{{ workshop.address }}</dd>
 
-                                <dt class="col-sm-5">Participants:</dt>
+                                <dt class="col-sm-5 text-muted">Participants:</dt>
                                 <dd class="col-sm-7">{{ workshop.no_of_participants }}</dd>
                             </dl>
                         </div>
                         <div class="col-md-6">
                             <dl class="row">
-                                <dt class="col-sm-5">Status:</dt>
+                                <dt class="col-sm-5 text-muted">Status:</dt>
                                 <dd class="col-sm-7">
-                                    {% if workshop.status %}
-                                        <span class="badge bg-success">{{ workshop.get_status }}</span>
+                                    {% if workshop.get_status == 'Accepted' %}
+                                        <span class="badge-status badge-status-accepted">{{ workshop.get_status }}</span>
+                                    {% elif workshop.get_status == 'Pending' %}
+                                        <span class="badge-status badge-status-pending">{{ workshop.get_status }}</span>
                                     {% else %}
-                                        <span class="badge bg-warning text-dark">{{ workshop.get_status }}</span>
+                                        <span class="badge-status badge-status-rejected">{{ workshop.get_status }}</span>
                                     {% endif %}
                                 </dd>
 
-                                <dt class="col-sm-5">Date:</dt>
+                                <dt class="col-sm-5 text-muted">Date:</dt>
                                 <dd class="col-sm-7">{{ workshop.date|date:"F d, Y" }}</dd>
 
                                 {% if workshop.instructor %}
-                                    <dt class="col-sm-5">Instructor:</dt>
+                                    <dt class="col-sm-5 text-muted">Instructor:</dt>
                                     <dd class="col-sm-7">{{ workshop.instructor.get_full_name }}</dd>
                                 {% endif %}
                             </dl>
@@ -50,11 +55,11 @@
                     </div>
 
                     {% if workshop.attachment_file_set.all %}
-                        <hr>
+                        <hr style="border-color: var(--border-color);">
                         <h5>Attachments:</h5>
                         <ul class="list-group">
                             {% for file in workshop.attachment_file_set.all %}
-                                <li class="list-group-item">
+                                <li class="list-group-item" style="background-color: var(--dark-bg); border-color: var(--border-color);">
                                     <a href="{{ file.attachment.url }}" target="_blank">{{ file.get_file_name }}</a>
                                 </li>
                             {% endfor %}
@@ -62,7 +67,7 @@
                     {% endif %}
                 </div>
 
-                <div class="card-footer bg-light text-end">
+                <div class="card-footer text-right">
                     {% if request.user|has_group:"instructor" and not workshop.status %}
                         <a href="{% url 'workshop_app:accept_workshop' workshop.id %}" class="btn btn-success">Accept Workshop</a>
                         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#dateChangeModal">
@@ -79,10 +84,8 @@
 {% if request.user|has_group:"instructor" and not workshop.status %}
 <div class="modal fade" id="dateChangeModal" tabindex="-1" role="dialog" aria-labelledby="dateChangeModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="dateChangeModalLabel">Propose a New Date</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div class="modal-content card"> <div class="modal-header card-header"> <h5 class="modal-title" id="dateChangeModalLabel">Propose a New Date</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
