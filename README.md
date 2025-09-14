@@ -129,7 +129,8 @@ Here are screenshots demonstrating the UI/UX improvements, particularly in mobil
 | :---: | :---: | :---: |
 | ![Mobile View 1](screenshots/Mobile1.png) | ![Mobile View 2](screenshots/Mobile2.png) | ![Mobile View 3](screenshots/Mobile3.png) |
 | ![Mobile View 4](screenshots/Mobile5.png) | ![Mobile View 5](screenshots/Mobile4.png) | ![Mobile View 6](screenshots/Mobile6.png) |
-<!-- ## Reasoning and Design Principles
+
+## Reasoning and Design Principles
 
 #### What design principles guided your improvements?
 
@@ -150,24 +151,5 @@ Here are screenshots demonstrating the UI/UX improvements, particularly in mobil
 
 #### What was the most challenging part of the task and how did you approach it?
 
-The most challenging part was integrating the modern Bootstrap form styling with Django's template rendering. Django's default `{{ form.as_p }}` tags don't allow for the necessary CSS classes. The solution was to manually render each form field in the HTML templates (`login.html`, `register.html`, etc.). This provided complete control over the markup, allowing me to add the required Bootstrap classes like `.form-control` and achieve a clean, consistent, and fully responsive design for all forms. -->
+The most challenging part was integrating the modern Bootstrap form styling with Django's template rendering. Django's default `{{ form.as_p }}` tags don't allow for the necessary CSS classes. The solution was to manually render each form field in the HTML templates (`login.html`, `register.html`, etc.). This provided complete control over the markup, allowing me to add the required Bootstrap classes like `.form-control` and achieve a clean, consistent, and fully responsive design for all forms.
 
-##  Reasoning and Design Principles
-
-### What design principles guided your improvements?
-I focused on three key principles while improving the design. First, I went with a **mobile-first approach**, making sure the interface looked clean and worked smoothly even on smaller screens. Second, I aimed for **clarity and simplicity**—instead of cluttered tables, I introduced a card-based layout with proper spacing and visual hierarchy so users can quickly find what they need. Lastly, I emphasized **consistency** by defining a unified color palette and typography in a central CSS file. This way, everything—from buttons to navbars—follows the same professional design language.
-
----
-
-### How did you ensure responsiveness across devices?
-The responsiveness is mainly powered by **Bootstrap’s grid system**, which automatically adjusts layouts from multiple columns on desktops to single columns on mobile. I also relied on **responsive components**, like a collapsing navbar that turns into a hamburger menu on smaller screens, and form inputs that stretch to full width on phones. To make sure space is used effectively, I combined **fluid containers** for the navbar with standard containers for content, preventing unnecessary overflow.
-
----
-
-### What trade-offs did you make between design and performance?
-I chose to use **Bootstrap** instead of writing pure custom CSS. While this slightly increases the initial file size, the trade-off is worth it because Bootstrap provides reliable, pre-tested components that speed up development. Another trade-off was prioritizing **readability over heavy animations**. I kept the interface fast and lightweight rather than adding fancy transitions that might slow things down on weaker mobile devices.
-
----
-
-### What was the most challenging part of the task and how did you approach it?
-The toughest part was **styling Django’s forms** with Bootstrap. Django’s default `{{ form.as_p }}` tags don’t allow the flexibility needed to add Bootstrap classes. To solve this, I manually rendered each form field inside the templates (like `login.html` and `register.html`). It was extra work, but it gave me complete control over the markup and let me apply classes like `.form-control`, ensuring all forms looked clean, modern, and consistent across devices.
