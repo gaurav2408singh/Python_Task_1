@@ -93,7 +93,7 @@ Here are screenshots demonstrating the UI/UX improvements, particularly in mobil
 
 --- -->
 
-<!-- ## Visual Showcase: Before and After
+## Visual Showcase: Before and After
 
 Here are screenshots demonstrating the UI/UX improvements, particularly in mobile view.
 
@@ -101,49 +101,34 @@ Here are screenshots demonstrating the UI/UX improvements, particularly in mobil
 
 | Before | After |
 | :---: | :---: |
-| ![Old Home Page](screenshots/OLD_home.png) | ![New Home Page](screenshots/NEW_home.png) |
-| *Original landing page.* | *New landing page with a clean, modern design.* |
 | ![Old Login Page](screenshots/OLD_home.png) | ![New Login Page](screenshots/NEW_login.png) |
 | *Original, non-responsive login form.* | *New, responsive login form with a professional layout.* |
 | ![Old Statistics Page](screenshots/OLD_statistics.png) | ![New Statistics Page](screenshots/NEW_statistics.png) |
 | *Original statistics page with a rigid table.* | *New statistics page with improved filters and layout.* |
+| ![Old Status Page](screenshots/OLD_admin1.png) | ![New Status Page](screenshots/improved_home2.png) |
+| *Original workshop status page.* | *New workshop status page using a responsive, card-based grid.* |
 
+---
 
-### Mobile Responsive View
+### Complete Screenshot Gallery
 
-Here is how the new design adapts to a mobile screen size.
-
-| Login & Register | Workshop Status | Details |
+#### Original ("Before") Design
+| | | |
 | :---: | :---: | :---: |
-| ![Mobile View 1](screenshots/Mobile1.png) | ![Mobile View 2](screenshots/Mobile2.png) | ![Mobile View 3](screenshots/Mobile3.png) | -->
+| ![Old Home Page](screenshots/OLD_home.png) | ![Old Statistics Page](screenshots/OLD_statistics.png) | ![Old Admin Page 1](screenshots/OLD_admin1.png) |
+| ![Old Admin Page 2](screenshots/OLD_admin2.png) | | |
 
-## Visual Showcase: Before and After
+#### Final ("After") Design
+| | | |
+| :---: | :---: | :---: |
+| ![New Home Page](screenshots/NEW_home2.png) | ![New Login Page](screenshots/NEW_login.png) | ![New Register Page](screenshots/NEW_register.png) |
+| ![New Statistics Page 1](screenshots/NEW_statistics.png) | ![New Statistics Page 2](screenshots/NEW_statistics2.png) | ![New Statistics Page 3](screenshots/NEW_statistics3.png) |
 
-Here are screenshots demonstrating the UI/UX improvements, particularly in mobile view.
-
-### Before
-These images show the original, non-responsive design of the website.
-![HOME PAGE](screenshots/OLD_home.png)
-![STATISTICS PAGE](screenshots/OLD_statistics.png)
-![ADMIN PAGE](screenshots/OLD_admin1.png)
-![ADMIN PAGE](screenshots/OLD_admin2.png)
-
----
-### Improved Design
-These images show the final, clean, and responsive design of the key pages.
-![NEW HOME PAGE](screenshots/NEW_home2.png)
-![NEW LOGIN PAGE](screenshots/NEW_login.png)
-![NEW REGISTER PAGE](screenshots/NEW_register.png)
-![NEW STATISTICS PAGE](screenshots/NEW_statistics3.png)
-
----
-### Mobile Responsive View
-Here is how the new design adapts to various mobile screen sizes.
-![MOBILE VIEW](screenshots/Mobile1.png)
-![MOBILE VIEW](screenshots/Mobile2.png)
-![MOBILE VIEW](screenshots/Mobile3.png)
-![MOBILE VIEW](screenshots/Mobile4.png)
-
+#### Mobile Responsive View
+| | | |
+| :---: | :---: | :---: |
+| ![Mobile View 1](screenshots/Mobile1.png) | ![Mobile View 2](screenshots/Mobile2.png) | ![Mobile View 3](screenshots/Mobile3.png) |
+| ![Mobile View 4](screenshots/Mobile4.png) | ![Mobile View 5](screenshots/Mobile5.png) | ![Mobile View 6](screenshots/Mobile6.png) |
 ## Reasoning and Design Principles
 
 #### What design principles guided your improvements?
