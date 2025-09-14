@@ -12,7 +12,7 @@ To run this project locally, please follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/Yash0951/Task1.git](https://github.com/Yash0951/Task1.git)
+    git clone https://github.com/Yash0951/Task1.git
     cd Task1
     ```
 
