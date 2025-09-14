@@ -57,41 +57,66 @@ To run this project locally, please follow these steps:
 --
 
 
-## Visual Showcase: Before and After
+<!-- ## Visual Showcase: Before and After
 
 Here are screenshots demonstrating the UI/UX improvements, particularly in mobile view.
 
 | Before | 
-![HOME PAGE](workshop_booking\screenshots\OLD_home.png)
-![STATISTICS PAGE](workshop_booking\screenshots\OLD_statistics.png)
-![ADMIN PAGE](workshop_booking\screenshots\OLD_admin1.png)
-![ADMIN PAGE](workshop_booking\screenshots\OLD_admin2.png)
+![HOME PAGE](workshop_booking/screenshots/OLD_home.png)
+![STATISTICS PAGE](workshop_booking/screenshots/OLD_statistics.png)
+![ADMIN PAGE](workshop_booking/screenshots/OLD_admin1.png)
+![ADMIN PAGE](workshop_booking/screenshots/OLD_admin2.png)
 
 | improved | 
-![HOME PAGE](workshop_booking\screenshots\imroved_home.png)
-![HOME PAGE](workshop_booking\screenshots\improved_home2.png)
-![STATISTICS](workshop_booking\screenshots\improved_statitics.png)
+![HOME PAGE](workshop_booking/screenshots/imroved_home.png)
+![HOME PAGE](workshop_booking/screenshots/improved_home2.png)
+![STATISTICS](workshop_booking/screenshots/improved_statitics.png)
 
 | new |
-![HOME PAGE](workshop_booking\screenshots\NEW_home.png) 
-![HOME PAGE](workshop_booking\screenshots\NEW_home.png)
-![HOME PAGE](workshop_booking\screenshots\NEW_home2.png)
-![LOGIN PAGE](workshop_booking\screenshots\NEW_login.png)
-![REGISTER PAGE](workshop_booking\screenshots\NEW_register.png)
-![STATISTICS PAGE](workshop_booking\screenshots\NEW_statistics.png)
-![STATISTICS PAGE](workshop_booking\screenshots\NEW_statistics2.png)
-![STATISTICS PAGE](workshop_booking\screenshots\NEW_statistics3.png)
-![ADMIN PAGE](workshop_booking\screenshots\NEW_admin.png)
+![HOME PAGE](workshop_booking/screenshots/NEW_home.png) 
+![HOME PAGE](workshop_booking/screenshots/NEW_home.png)
+![HOME PAGE](workshop_booking/screenshots/NEW_home2.png)
+![LOGIN PAGE](workshop_booking/screenshots/NEW_login.png)
+![REGISTER PAGE](workshop_booking/screenshots/NEW_register.png)
+![STATISTICS PAGE](workshop_booking/screenshots/NEW_statistics.png)
+![STATISTICS PAGE](workshop_booking/screenshots/NEW_statistics2.png)
+![STATISTICS PAGE](workshop_booking/screenshots/NEW_statistics3.png)
+![ADMIN PAGE](workshop_booking/screenshots/NEW_admin.png)
 
 | mobile view/ responsive|
-![MOBILE VIEW](workshop_booking\screenshots\Mobile1.png)
-![MOBILE VIEW](workshop_booking\screenshots\Mobile2.png)
-![MOBILE VIEW](workshop_booking\screenshots\Mobile3.png)
-![MOBILE VIEW](workshop_booking\screenshots\Mobile5.png)
-![MOBILE VIEW](workshop_booking\screenshots\Mobile4.png)
-![MOBILE VIEW](workshop_booking\screenshots\Mobile6.png)
+![MOBILE VIEW](workshop_booking/screenshots/Mobile1.png)
+![MOBILE VIEW](workshop_booking/screenshots/Mobile2.png)
+![MOBILE VIEW](workshop_booking/screenshots/Mobile3.png)
+![MOBILE VIEW](workshop_booking/screenshots/Mobile5.png)
+![MOBILE VIEW](workshop_booking/screenshots/Mobile4.png)
+![MOBILE VIEW](workshop_booking/screenshots/Mobile6.png)
 
----
+--- -->
+
+## Visual Showcase: Before and After
+
+Here are screenshots demonstrating the UI/UX improvements, particularly in mobile view.
+
+### Key Page Improvements
+
+| Before | After |
+| :---: | :---: |
+| ![Old Home Page](screenshots/OLD_home.png) | ![New Home Page](screenshots/NEW_home.png) |
+| *Original landing page.* | *New landing page with a clean, modern design.* |
+| ![Old Login Page](screenshots/OLD_home.png) | ![New Login Page](screenshots/NEW_login.png) |
+| *Original, non-responsive login form.* | *New, responsive login form with a professional layout.* |
+| ![Old Statistics Page](screenshots/OLD_statistics.png) | ![New Statistics Page](screenshots/NEW_statistics.png) |
+| *Original statistics page with a rigid table.* | *New statistics page with improved filters and layout.* |
+
+
+### Mobile Responsive View
+
+Here is how the new design adapts to a mobile screen size.
+
+| Login & Register | Workshop Status | Details |
+| :---: | :---: | :---: |
+| ![Mobile View 1](screenshots/Mobile1.png) | ![Mobile View 2](screenshots/Mobile2.png) | ![Mobile View 3](screenshots/Mobile3.png) |
+
 
 ## Reasoning and Design Principles
 
