@@ -93,7 +93,7 @@ Here are screenshots demonstrating the UI/UX improvements, particularly in mobil
 
 --- -->
 
-## Visual Showcase: Before and After
+<!-- ## Visual Showcase: Before and After
 
 Here are screenshots demonstrating the UI/UX improvements, particularly in mobile view.
 
@@ -115,8 +115,34 @@ Here is how the new design adapts to a mobile screen size.
 
 | Login & Register | Workshop Status | Details |
 | :---: | :---: | :---: |
-| ![Mobile View 1](screenshots/Mobile1.png) | ![Mobile View 2](screenshots/Mobile2.png) | ![Mobile View 3](screenshots/Mobile3.png) |
+| ![Mobile View 1](screenshots/Mobile1.png) | ![Mobile View 2](screenshots/Mobile2.png) | ![Mobile View 3](screenshots/Mobile3.png) | -->
 
+## Visual Showcase: Before and After
+
+Here are screenshots demonstrating the UI/UX improvements, particularly in mobile view.
+
+### Before
+These images show the original, non-responsive design of the website.
+![HOME PAGE](screenshots/OLD_home.png)
+![STATISTICS PAGE](screenshots/OLD_statistics.png)
+![ADMIN PAGE](screenshots/OLD_admin1.png)
+![ADMIN PAGE](screenshots/OLD_admin2.png)
+
+---
+### Improved Design
+These images show the final, clean, and responsive design of the key pages.
+![NEW HOME PAGE](screenshots/NEW_home2.png)
+![NEW LOGIN PAGE](screenshots/NEW_login.png)
+![NEW REGISTER PAGE](screenshots/NEW_register.png)
+![NEW STATISTICS PAGE](screenshots/NEW_statistics3.png)
+
+---
+### Mobile Responsive View
+Here is how the new design adapts to various mobile screen sizes.
+![MOBILE VIEW](screenshots/Mobile1.png)
+![MOBILE VIEW](screenshots/Mobile2.png)
+![MOBILE VIEW](screenshots/Mobile3.png)
+![MOBILE VIEW](screenshots/Mobile4.png)
 
 ## Reasoning and Design Principles
 
