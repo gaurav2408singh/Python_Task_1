@@ -62,34 +62,34 @@ To run this project locally, please follow these steps:
 Here are screenshots demonstrating the UI/UX improvements, particularly in mobile view.
 
 | Before | 
-![HOME PAGE](../screenshots/OLD_home.png)
-![STATISTICS PAGE](../screenshots/OLD_statistics.png)
-![ADMIN PAGE](../screenshots/OLD_admin1.png)
-![ADMIN PAGE](../screenshots/OLD_admin2.png)
+![HOME PAGE](workshop_booking\screenshots\OLD_home.png)
+![STATISTICS PAGE](workshop_booking\screenshots\OLD_statistics.png)
+![ADMIN PAGE](workshop_booking\screenshots\OLD_admin1.png)
+![ADMIN PAGE](workshop_booking\screenshots\OLD_admin2.png)
 
 | improved | 
-![HOME PAGE](../screenshots/imroved_home.png)
-![HOME PAGE](../screenshots/improved_home2.png)
-![STATISTICS](../screenshots/improved_statitics.png)
+![HOME PAGE](workshop_booking\screenshots\imroved_home.png)
+![HOME PAGE](workshop_booking\screenshots\improved_home2.png)
+![STATISTICS](workshop_booking\screenshots\improved_statitics.png)
 
 | new |
-![HOME PAGE](../screenshots/NEW_home.png) 
-![HOME PAGE](../screenshots/NEW_home.png)
-![HOME PAGE](../screenshots/NEW_home2.png)
-![LOGIN PAGE](../screenshots/NEW_login.png)
-![REGISTER PAGE](../screenshots/NEW_register.png)
-![STATISTICS PAGE](../screenshots/NEW_statistics.png)
-![STATISTICS PAGE](../screenshots/NEW_statistics2.png)
-![STATISTICS PAGE](../screenshots/NEW_statistics3.png)
-![ADMIN PAGE](../screenshots/NEW_admin.png)
+![HOME PAGE](workshop_booking\screenshots\NEW_home.png) 
+![HOME PAGE](workshop_booking\screenshots\NEW_home.png)
+![HOME PAGE](workshop_booking\screenshots\NEW_home2.png)
+![LOGIN PAGE](workshop_booking\screenshots\NEW_login.png)
+![REGISTER PAGE](workshop_booking\screenshots\NEW_register.png)
+![STATISTICS PAGE](workshop_booking\screenshots\NEW_statistics.png)
+![STATISTICS PAGE](workshop_booking\screenshots\NEW_statistics2.png)
+![STATISTICS PAGE](workshop_booking\screenshots\NEW_statistics3.png)
+![ADMIN PAGE](workshop_booking\screenshots\NEW_admin.png)
 
 | mobile view/ responsive|
-![MOBILE VIEW](../screenshots/Mobile1.png)
-![MOBILE VIEW](../screenshots/Mobile2.png)
-![MOBILE VIEW](../screenshots/Mobile3.png)
-![MOBILE VIEW](../screenshots/Mobile5.png)
-![MOBILE VIEW](../screenshots/Mobile4.png)
-![MOBILE VIEW](../screenshots/Mobile6.png)
+![MOBILE VIEW](workshop_booking\screenshots\Mobile1.png)
+![MOBILE VIEW](workshop_booking\screenshots\Mobile2.png)
+![MOBILE VIEW](workshop_booking\screenshots\Mobile3.png)
+![MOBILE VIEW](workshop_booking\screenshots\Mobile5.png)
+![MOBILE VIEW](workshop_booking\screenshots\Mobile4.png)
+![MOBILE VIEW](workshop_booking\screenshots\Mobile6.png)
 
 ---
 
