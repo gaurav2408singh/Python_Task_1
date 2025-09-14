@@ -119,16 +119,16 @@ Here are screenshots demonstrating the UI/UX improvements, particularly in mobil
 | ![Old Admin Page 2](screenshots/OLD_admin2.png) | | |
 
 #### Final ("After") Design
-| | | |
-| :---: | :---: | :---: |
-| ![New Home Page](screenshots/NEW_home2.png) | ![New Login Page](screenshots/NEW_login.png) | ![New Register Page](screenshots/NEW_register.png) |
-| ![New Statistics Page 1](screenshots/NEW_statistics.png) | ![New Statistics Page 2](screenshots/NEW_statistics2.png) | ![New Statistics Page 3](screenshots/NEW_statistics3.png) |
+| | | | | |
+| :---: | :---: | :---: | :---: | :---: |
+| ![New Home Page](screenshots/NEW_home0.png) | ![New Home Page](screenshots/NEW_home.png) |![New Home Page](screenshots/NEW_home2.png) |![New Login Page](screenshots/NEW_login.png) | ![New Register Page](screenshots/NEW_register.png) |
+| ![New Statistics Page 1](screenshots/NEW_statistics.png) | ![New Statistics Page 2](screenshots/NEW_statistics2.png) | ![New Statistics Page 3](screenshots/NEW_statistics3.png) |![Admin Page](screenshots/NEW_admin.png) |
 
 #### Mobile Responsive View
 | | | |
 | :---: | :---: | :---: |
 | ![Mobile View 1](screenshots/Mobile1.png) | ![Mobile View 2](screenshots/Mobile2.png) | ![Mobile View 3](screenshots/Mobile3.png) |
-| ![Mobile View 4](screenshots/Mobile4.png) | ![Mobile View 5](screenshots/Mobile5.png) | ![Mobile View 6](screenshots/Mobile6.png) |
+| ![Mobile View 4](screenshots/Mobile5.png) | ![Mobile View 5](screenshots/Mobile4.png) | ![Mobile View 6](screenshots/Mobile6.png) |
 ## Reasoning and Design Principles
 
 #### What design principles guided your improvements?
