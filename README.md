@@ -101,11 +101,11 @@ Here are screenshots demonstrating the UI/UX improvements, particularly in mobil
 
 | Before | After |
 | :---: | :---: |
-| ![Old Login Page](screenshots/OLD_home.png) | ![New Login Page](screenshots/NEW_login.png) |
+| ![Old Login Page](screenshots/OLD_home.png) |![New Status Page](screenshots/improved_home2.png) 
 | *Original, non-responsive login form.* | *New, responsive login form with a professional layout.* |
 | ![Old Statistics Page](screenshots/OLD_statistics.png) | ![New Statistics Page](screenshots/NEW_statistics.png) |
 | *Original statistics page with a rigid table.* | *New statistics page with improved filters and layout.* |
-| ![Old Status Page](screenshots/OLD_admin1.png) | ![New Status Page](screenshots/improved_home2.png) |
+| ![Old Status Page](screenshots/OLD_admin1.png) | ![New Login Page](screenshots/NEW_login.png) | |
 | *Original workshop status page.* | *New workshop status page using a responsive, card-based grid.* |
 
 ---
@@ -113,8 +113,8 @@ Here are screenshots demonstrating the UI/UX improvements, particularly in mobil
 ### Complete Screenshot Gallery
 
 #### Original ("Before") Design
-| | | |
-| :---: | :---: | :---: |
+| | | | |
+| :---: | :---: | :---: | :---: |
 | ![Old Home Page](screenshots/OLD_home.png) | ![Old Statistics Page](screenshots/OLD_statistics.png) | ![Old Admin Page 1](screenshots/OLD_admin1.png) |
 | ![Old Admin Page 2](screenshots/OLD_admin2.png) | | |
 
